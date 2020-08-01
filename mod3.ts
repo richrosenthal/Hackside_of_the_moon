@@ -5,7 +5,7 @@ import * as log from "https://deno.land/std/log/mod.ts";
 
 async function downloadLaunchData(){
   log.info("Downloading launch data...");
-  const response = await fetch("https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY",{
+  const response = await fetch("https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0",{
     method: "GET",
   });
 
@@ -15,8 +15,12 @@ async function downloadLaunchData(){
   }
 
   const launchData = await response.json();
+  let yesterdayOnMars = launchData.sol_keys[5];
+  let todayOnMars = launchData.sol_keys[6];
+  // console.log(launchData.sol_keys);
+    console.log(launchData[yesterdayOnMars]);
+    console.log(launchData[todayOnMars]);
 
-    console.log(launchData)
   }
 
 
