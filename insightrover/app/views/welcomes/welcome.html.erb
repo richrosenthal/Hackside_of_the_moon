@@ -1,0 +1,52 @@
+<script src="/public/javascripts/script.js"></script>
+<div id="top-content">
+
+
+  <main>
+    <article id="launch">
+      <p>Take a peak at the weather conditions on Elysium Planitia. </p>
+      <p>The Interior Exploration using Seismic Investigations, Geodesy and Heat Transport (InSight) mission is a robotic lander designed to study the deep interior of the planet Mars.
+        InSight's objectives are to place a seismometer, called SEIS, on the surface of Mars to measure seismic activity and provide accurate 3D models of the planet's interior; and measure internal heat flow using a heat probe called HP3 to study Mars' early geological evolution.[19] This could bring a new
+        understanding of how the Solar System's terrestrial planets – Mercury, Venus, Earth, Mars – and Earth's
+        Moon form and evolve. - Wikipedia
+
+        <br/>
+        <br/>
+
+        Enter your phone number above to receive daily weather updates from the Insight Rover!
+
+
+
+
+      </p>
+       <p>
+         Current Sol: <%= @rover[0][2..4] %>
+         <br />
+         Minimum Temp: <%= @rover[1] %>
+         <br />
+         Max Temp: <%= @rover[2] %>
+         <br />
+         Time of last Update: <%= @rover[3] %>
+       </p>
+
+      <p id="launch-success" hidden>Congratulations! Interstellar launch is scheduled.</p>
+    </article>
+
+    <article id="history" hidden>
+      <p>History of tracked mission launches. Includes SpaceX launches starting from the year 2006.</p>
+      <div id="history-list"></div>
+    </article>
+
+    <article id="upcoming" hidden>
+      <p>Upcoming missions including both SpaceX and Zero to Mastery rockets.</p>
+      <p>Warning! Clicking on the <span class="delete">✖</span> aborts the mission.</p>
+      <div id="upcoming-list"></div>
+    </article>
+  </main>
+</div>
+
+<footer>
+  <div class="quiet">
+    To The Moon and Hack Hackathon Project 2020
+  </div>
+</footer>

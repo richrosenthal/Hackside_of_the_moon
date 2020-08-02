@@ -1,0 +1,82 @@
+<script src="/public/javascripts/script.js"></script>
+<div id="top-content">
+  <header>
+    <div>
+      <h1 class="title-global"><a onclick="navigate('launch')">Insight Weather Update</a></h1>
+      <nav>
+        <ul>
+          <li><a onclick="navigate('launch')">[Send Text]</a></li>
+          <li><a onclick="navigate('upcoming')">[Today's Weather]</a></li>
+          <li><a onclick="navigate('history')">[Yesterday's Weather]</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <h1 class="title-event">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="title-event-wrap">Weather Update From </span><a href="https://mars.nasa.gov/insight/"> The Insight Rover</a><span class="title-event-wrap">:</span>
+      </h1>
+    </div>
+  </header>
+
+  <div id="sidebar">
+    <div id="sponsor">
+      <div class="quiet">Live from Mars! </div>
+      <div class="sponsor">We are retrieving weather and climate conditions from Insight Rover currently stationed at Elysium Planitia, Mars.</div>
+    </div>
+  </div>
+
+  <main>
+    <article id="launch">
+      <p>Take a peak at the weather conditions on Elysium Planitia. </p>
+      <p>The Interior Exploration using Seismic Investigations, Geodesy and Heat Transport (InSight) mission is a robotic lander designed to study the deep interior of the planet Mars.
+        InSight's objectives are to place a seismometer, called SEIS, on the surface of Mars to measure seismic activity and provide accurate 3D models of the planet's interior; and measure internal heat flow using a heat probe called HP3 to study Mars' early geological evolution.[19] This could bring a new
+        understanding of how the Solar System's terrestrial planets – Mercury, Venus, Earth, Mars – and Earth's
+        Moon form and evolve. - Wikipedia
+
+        <br/>
+        <br/>
+
+        Enter your phone number to receive daily weather updates from the Insight Rover!
+
+      </p>
+      <form>
+        <div class="form-item">
+          <label>Launch Date          </label>
+          <input type="date" id="launch-day" max="2030-12-31" />
+        </div>
+        <div class="form-item">
+          <label>Mission Name         </label>
+          <input type="text" id="mission-name" />
+        </div>
+        <div class="form-item">
+          <label>Rocket Type          </label>
+          <input type="text" id="rocket-name" value="ZTM Experimental IS1" disabled />
+        </div>
+        <div class="form-item">
+          <label>Destination Exoplanet</label>
+          <select id="planets-selector"></select>
+        </div>
+        <a class="submit" onclick="submitLaunch()">[Save Mission ✔]</a>
+      </form>
+
+      <p id="launch-success" hidden>Congratulations! Interstellar launch is scheduled.</p>
+    </article>
+
+    <article id="history" hidden>
+      <p>History of tracked mission launches. Includes SpaceX launches starting from the year 2006.</p>
+      <div id="history-list"></div>
+    </article>
+
+    <article id="upcoming" hidden>
+      <p>Upcoming missions including both SpaceX and Zero to Mastery rockets.</p>
+      <p>Warning! Clicking on the <span class="delete">✖</span> aborts the mission.</p>
+      <div id="upcoming-list"></div>
+    </article>
+  </main>
+</div>
+
+<footer>
+  <div class="quiet">
+    To The Moon and Hack Hackathon Project 2020
+  </div>
+</footer>
